@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم مدرسة مشيرفة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+    <button class="mt" onclick="document.querySelector('.sb').classList.toggle('open')"><i
+            class="fas fa-bars"></i></button>
+    <div class="tc" id="tc"></div>
+    <div class="mo" id="dm">
+        <div class="md">
+            <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1rem"><i class="fas fa-exclamation-triangle"
+                    style="color:var(--rd)"></i> تأكيد الحذف</h3>
+            <p style="color:var(--td);margin-bottom:1.5rem">هل أنت متأكد من حذف هذا العنصر؟</p>
+            <div class="br"><button class="ba bd" id="cdel"><i class="fas fa-trash"></i> حذف</button><button
+                    class="ba bs" onclick="closeM()"><i class="fas fa-times"></i> إلغاء</button></div>
+        </div>
+    </div>
+
+    <aside class="sb">
+        <div class="sb-h">
+            <div class="sb-logo"><i class="fas fa-school"></i></div>
+            <div class="sb-brand">
+                <h2>مدرسة مشيرفة</h2><span>لوحة التحكم</span>
+            </div>
+        </div>
+        <nav class="sb-nav">
+            <div class="nl">الرائيسية</div>
+            <div class="ni active" data-page="overview"><i class="fas fa-th-large"></i> نظرة عامة</div>
+            <div class="nl">إدارة المحتوى</div>
+            <div class="ni" data-page="initiatives"><i class="fas fa-lightbulb"></i> المبادرات <span class="nb"
+                    id="inb">0</span></div>
+            <div class="ni" data-page="news"><i class="fas fa-newspaper"></i> الأخبار</div>
+            <div class="ni" data-page="calendar"><i class="fas fa-calendar-alt"></i> الرزنامة</div>
+            <div class="ni" data-page="links"><i class="fas fa-link"></i> الروابط</div>
+            <div class="ni" data-page="stats-edit"><i class="fas fa-chart-bar"></i> الإحصائيات</div>
+            <div class="ni" data-page="principal"><i class="fas fa-user-tie"></i> كلمة المدير</div>
+            <div class="ni" data-page="contact"><i class="fas fa-address-book"></i> التواصل</div>
+            <div class="nl">الأدوات</div>
+            <div class="ni" data-page="preview"><i class="fas fa-eye"></i> معاينة الموقع</div>
+        </nav>
+        <div class="sb-f">
+            <div class="ui">
+                <div class="ua">ر</div>
+                <div>
+                    <div class="un">رامي ارفاعية</div>
+                    <div class="ur">مدير المدرسة</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="mn">
+        <header class="tb">
+            <h1 class="tb-t" id="pt">نظرة عامة</h1>
+            <div class="tb-a"><button class="tb-b" onclick="location.reload()"><i
+                        class="fas fa-sync-alt"></i></button><button class="tb-b" onclick="nav('preview')"><i
+                        class="fas fa-eye"></i></button></div>
+        </header>
+        <div class="ct">
+
+            <div class="pg active" id="page-overview">
+                <div class="sr">
+                    <div class="sc">
+                        <div class="sl">المبادرات</div>
+                        <div class="sv" id="o1">0</div>
+                        <div class="ss">مبادرة تربوية</div>
+                    </div>
+                    <div class="sc">
+                        <div class="sl">الأخبار</div>
+                        <div class="sv" id="o2">0</div>
+                        <div class="ss">خبر</div>
+                    </div>
+                    <div class="sc">
+                        <div class="sl">أحداث الرزنامة</div>
+                        <div class="sv" id="o3">0</div>
+                        <div class="ss">حدث</div>
+                    </div>
+                    <div class="sc">
+                        <div class="sl">الروابط</div>
+                        <div class="sv" id="o4">0</div>
+                        <div class="ss">رابط</div>
+                    </div>
+                </div>
+                <h3 style="font-size:1.1rem;margin-bottom:1rem;color:var(--td)">إجراءات سريعة</h3>
+                <div class="qa">
+                    <div class="qi" onclick="nav('initiatives')">
+                        <div class="qii" style="background:linear-gradient(135deg,var(--pr),#7c5ce7)"><i
+                                class="fas fa-plus"></i></div>
+                        <div><b style="font-size:.9rem">إضافة مبادرة</b>
+                            <div style="font-size:.75rem;color:var(--td)">مبادرة تربوية جديدة</div>
+                        </div>
+                    </div>
+                    <div class="qi" onclick="nav('news')">
+                        <div class="qii" style="background:linear-gradient(135deg,var(--sc),#55efc4)"><i
+                                class="fas fa-plus"></i></div>
+                        <div><b style="font-size:.9rem">إضافة خبر</b>
+                            <div style="font-size:.75rem;color:var(--td)">أخبار ومستجدات</div>
+                        </div>
+                    </div>
+                    <div class="qi" onclick="nav('calendar')">
+                        <div class="qii" style="background:linear-gradient(135deg,var(--or),#ffeaa7)"><i
+                                class="fas fa-plus"></i></div>
+                        <div><b style="font-size:.9rem">إضافة حدث</b>
+                            <div style="font-size:.75rem;color:var(--td)">حدث في الرزنامة</div>
+                        </div>
+                    </div>
+                    <div class="qi" onclick="nav('preview')">
+                        <div class="qii" style="background:linear-gradient(135deg,var(--pk),#fab1a0)"><i
+                                class="fas fa-eye"></i></div>
+                        <div><b style="font-size:.9rem">معاينة الموقع</b>
+                            <div style="font-size:.75rem;color:var(--td)">فتح الموقع</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pg" id="page-initiatives">
+                <div class="ph">
+                    <h2><i class="fas fa-lightbulb" style="color:var(--or)"></i> إدارة المبادرات</h2><button
+                        class="ba bp" onclick="tgF('iF')"><i class="fas fa-plus"></i> إضافة</button>
+                </div>
+                <div class="fs" id="iF" style="display:none">
+                    <div class="fst"><i class="fas fa-edit"></i> <span id="iFt">إضافة مبادرة</span></div><input
+                        type="hidden" id="iIdx" value="">
+                    <div class="fg">
+                        <div class="fgr"><label class="fl">الاسم</label><input class="fi" id="iN"></div>
+                        <div class="fgr"><label class="fl">العنوان الفرعي</label><input class="fi" id="iS"></div>
+                        <div class="fgr"><label class="fl">الأيقونة</label><input class="fi" id="iI" dir="ltr"
+                                placeholder="fa-heart"></div>
+                        <div class="fgr"><label class="fl">الرابط</label><input class="fi" id="iL" dir="ltr"></div>
+                        <div class="fgr"><label class="fl">اللون</label>
+                            <div class="cops" id="iC">
+                                <div class="cop sel" style="background:#ec4899" data-c="#ec4899"></div>
+                                <div class="cop" style="background:#8b5cf6" data-c="#8b5cf6"></div>
+                                <div class="cop" style="background:#14b8a6" data-c="#14b8a6"></div>
+                                <div class="cop" style="background:#3b82f6" data-c="#3b82f6"></div>
+                                <div class="cop" style="background:#f59e0b" data-c="#f59e0b"></div>
+                                <div class="cop" style="background:#ef4444" data-c="#ef4444"></div>
+                            </div>
+                        </div>
+                        <div class="fgr"><label class="fl">الشارة</label><input class="fi" id="iBd"></div>
+                        <div class="fgr fw"><label class="fl">الوصف</label><textarea class="fta" id="iD"></textarea>
+                        </div>
+                        <div class="fgr fw"><label class="fl">المميزات (سطر/ميزة)</label><textarea class="fta"
+                                id="iFe"></textarea></div>
+                        <div class="fgr fw"><label class="fl">نص الزر</label><input class="fi" id="iLT"></div>
+                    </div>
+                    <div class="br"><button class="ba bp" onclick="sI()"><i class="fas fa-save"></i> حفظ</button><button
+                            class="ba bs" onclick="tgF('iF')"><i class="fas fa-times"></i> إلغاء</button></div>
+                </div>
+                <div class="dtw">
+                    <table class="dt">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>الاسم</th>
+                                <th>الفرعي</th>
+                                <th>اللون</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="iTb"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pg" id="page-news">
+                <div class="ph">
+                    <h2><i class="fas fa-newspaper" style="color:var(--sc)"></i> إدارة الأخبار</h2><button class="ba bp"
+                        onclick="tgF('nF')"><i class="fas fa-plus"></i> إضافة</button>
+                </div>
+                <div class="fs" id="nF" style="display:none">
+                    <div class="fst"><i class="fas fa-edit"></i> <span id="nFt">إضافة خبر</span></div><input
+                        type="hidden" id="nIdx" value="">
+                    <div class="fg">
+                        <div class="fgr"><label class="fl">العنوان</label><input class="fi" id="nT"></div>
+                        <div class="fgr"><label class="fl">الأيقونة</label><input class="fi" id="nI" dir="ltr"
+                                placeholder="fa-medal"></div>
+                        <div class="fgr fw"><label class="fl">المحتوى</label><textarea class="fta" id="nC"></textarea>
+                        </div>
+                    </div>
+                    <div class="br"><button class="ba bp" onclick="sN()"><i class="fas fa-save"></i> حفظ</button><button
+                            class="ba bs" onclick="tgF('nF')"><i class="fas fa-times"></i> إلغاء</button></div>
+                </div>
+                <div class="dtw">
+                    <table class="dt">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>العنوان</th>
+                                <th>أيقونة</th>
+                                <th>المحتوى</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="nTb"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pg" id="page-calendar">
+                <div class="ph">
+                    <h2><i class="fas fa-calendar-alt" style="color:var(--or)"></i> الرزنامة</h2><button class="ba bp"
+                        onclick="tgF('cF')"><i class="fas fa-plus"></i> إضافة حدث</button>
+                </div>
+                <div class="fs" id="cF" style="display:none">
+                    <div class="fst"><i class="fas fa-edit"></i> إضافة حدث</div>
+                    <div class="fg">
+                        <div class="fgr"><label class="fl">الشهر</label><select class="fse" id="cM"></select></div>
+                        <div class="fgr"><label class="fl">اليوم</label><input class="fi" id="cD" type="number" min="1"
+                                max="31"></div>
+                        <div class="fgr"><label class="fl">الحدث</label><input class="fi" id="cN"></div>
+                        <div class="fgr"><label class="fl">النوع</label><select class="fse" id="cT">
+                                <option value="event">حدث</option>
+                                <option value="exam">امتحان</option>
+                                <option value="holiday">عطلة</option>
+                                <option value="special">مميز</option>
+                            </select></div>
+                    </div>
+                    <div class="br"><button class="ba bp" onclick="sC()"><i class="fas fa-save"></i> حفظ</button><button
+                            class="ba bs" onclick="tgF('cF')"><i class="fas fa-times"></i> إلغاء</button></div>
+                </div>
+                <div class="dtw">
+                    <table class="dt">
+                        <thead>
+                            <tr>
+                                <th>الشهر</th>
+                                <th>يوم</th>
+                                <th>الحدث</th>
+                                <th>النوع</th>
+                                <th>حذف</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cTb"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pg" id="page-links">
+                <div class="ph">
+                    <h2><i class="fas fa-link" style="color:var(--pl)"></i> الروابط</h2><button class="ba bp"
+                        onclick="tgF('lF')"><i class="fas fa-plus"></i> إضافة</button>
+                </div>
+                <div class="fs" id="lF" style="display:none">
+                    <div class="fst"><i class="fas fa-edit"></i> <span id="lFt">إضافة رابط</span></div><input
+                        type="hidden" id="lIdx" value="">
+                    <div class="fg">
+                        <div class="fgr"><label class="fl">الاسم</label><input class="fi" id="lN"></div>
+                        <div class="fgr"><label class="fl">الأيقونة</label><input class="fi" id="lI" dir="ltr"
+                                placeholder="fa-school"></div>
+                        <div class="fgr fw"><label class="fl">الرابط</label><input class="fi" id="lU" dir="ltr"></div>
+                    </div>
+                    <div class="br"><button class="ba bp" onclick="sL()"><i class="fas fa-save"></i> حفظ</button><button
+                            class="ba bs" onclick="tgF('lF')"><i class="fas fa-times"></i> إلغاء</button></div>
+                </div>
+                <div class="dtw">
+                    <table class="dt">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>الاسم</th>
+                                <th>أيقونة</th>
+                                <th>الرابط</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lTb"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="pg" id="page-stats-edit">
+                <div class="ph">
+                    <h2><i class="fas fa-chart-bar" style="color:var(--sc)"></i> الإحصائيات</h2>
+                </div>
+                <div class="fs">
+                    <div class="fst"><i class="fas fa-users"></i> إحصائيات المدرسة</div>
+                    <div class="fg">
+                        <div class="fgr"><label class="fl">الطلاب</label><input class="fi" id="sS" type="number"
+                                value="450"></div>
+                        <div class="fgr"><label class="fl">المعلمين</label><input class="fi" id="sT" type="number"
+                                value="35"></div>
+                        <div class="fgr"><label class="fl">الصفوف</label><input class="fi" id="sCl" type="number"
+                                value="18"></div>
+                        <div class="fgr"><label class="fl">الإنجازات</label><input class="fi" id="sA" type="number"
+                                value="25"></div>
+                    </div>
+                    <div class="br"><button class="ba bp" onclick="sSt()"><i class="fas fa-save"></i> حفظ</button></div>
+                </div>
+            </div>
+
+            <div class="pg" id="page-principal">
+                <div class="ph">
+                    <h2><i class="fas fa-user-tie" style="color:var(--or)"></i> كلمة المدير</h2>
+                </div>
+                <div class="fs">
+                    <div class="fst"><i class="fas fa-pen-fancy"></i> تعديل</div>
+                    <div class="fg">
+                        <div class="fgr"><label class="fl">الاسم</label><input class="fi" id="pN" value="رامي ارفاعية">
+                        </div>
+                        <div class="fgr"><label class="fl">رابط الصورة</label><input class="fi" id="pI" dir="ltr"></div>
+                        <div class="fgr fw"><label class="fl">الرسالة</label><textarea class="fta" id="pM"
+                                style="min-height:180px">أهلاً بكم في موقع مدرستنا. نؤمن أن التعليم هو رحلة مشتركة بين البيت والمدرسة لبناء شخصية الطالب. نسعى لتقديم بيئة تعليمية محفزة، آمنة، وداعمة للإبداع والتميز. معاً نبني مستقبلاً مشرقاً لأبنائنا وبناتنا.</textarea>
+                        </div>
+                    </div>
+                    <div class="br"><button class="ba bp" onclick="sP()"><i class="fas fa-save"></i> حفظ</button></div>
+                </div>
+            </div>
+
+            <div class="pg" id="page-contact">
+                <div class="ph">
+                    <h2><i class="fas fa-address-book" style="color:var(--pk)"></i> التواصل</h2>
+                </div>
+                <div class="fs">
+                    <div class="fst"><i class="fas fa-phone-alt"></i> بيانات الاتصال</div>
+                    <div class="fg">
+                        <div class="fgr"><label class="fl">الهاتف</label><input class="fi" id="ctP" value="04-6313931"
+                                dir="ltr"></div>
+                        <div class="fgr"><label class="fl">الفاكس</label><input class="fi" id="ctF" value="04-6110614"
+                                dir="ltr"></div>
+                        <div class="fgr"><label class="fl">البريد</label><input class="fi" id="ctE"
+                                value="Musherfeschool@gmail.com" dir="ltr"></div>
+                        <div class="fgr"><label class="fl">واتساب</label><input class="fi" id="ctW" value="972502299119"
+                                dir="ltr"></div>
+                        <div class="fgr"><label class="fl">فيسبوك</label><input class="fi" id="ctFB" dir="ltr"></div>
+                        <div class="fgr"><label class="fl">يوتيوب</label><input class="fi" id="ctYT" dir="ltr"></div>
+                    </div>
+                    <div class="br"><button class="ba bp" onclick="sCt()"><i class="fas fa-save"></i> حفظ</button></div>
+                </div>
+            </div>
+
+            <div class="pg" id="page-preview">
+                <div class="ph">
+                    <h2><i class="fas fa-eye" style="color:var(--sc)"></i> معاينة الموقع</h2>
+                </div>
+                <div class="fs">
+                    <p style="color:var(--td);margin-bottom:1.5rem;line-height:1.8">افتح الموقع في نافذة جديدة للمعاينة
+                    </p>
+                    <div class="br"><button class="ba bp" onclick="window.open('index.html', '_blank')"
+                            style="font-size:1.1rem;padding:1rem 2.5rem"><i class="fas fa-external-link-alt"></i> فتح
+                            الموقع</button></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>

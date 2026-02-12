@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة مشيرفة الابتدائية - بوابة التميز والإبداع</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOmuSnGS9OmfsVRo3-FedvNpsjYbgAZCMWlFYtMsFf4wX3F9upApscvMLiVa6MS2DQe7mNGNQO6zUyfSSMD4pmPpTOG5TFEZiZcE2jXzNrJjv7-4D9xh-H9HBsHtVYIU6nEesjXL_QvHFgZSVcvkU7jzA=w500-h500-s-no-gm?authuser=0" alt="شعار المدرسة">
+                <div class="nav-logo-text">
+                    <h3>مدرسة مشيرفة</h3>
+                    <p>بوابة التميز والإبداع</p>
+                </div>
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#initiatives">المبادرات</a></li>
+                <li><a href="#calendar">الرزنامة</a></li>
+                <li><a href="#news">الأخبار</a></li>
+                <li><a href="#principal">كلمة المدير</a></li>
+                <li><a href="#links">روابط هامة</a></li>
+                <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="https://lh3.googleusercontent.com/pw/AP1GczOmuSnGS9OmfsVRo3-FedvNpsjYbgAZCMWlFYtMsFf4wX3F9upApscvMLiVa6MS2DQe7mNGNQO6zUyfSSMD4pmPpTOG5TFEZiZcE2jXzNrJjv7-4D9xh-H9HBsHtVYIU6nEesjXL_QvHFgZSVcvkU7jzA=w500-h500-s-no-gm?authuser=0" alt="شعار المدرسة" class="hero-logo">
+            <h1>أهلاً وسهلاً في مدرسة مشيرفة الابتدائية</h1>
+            <p>معاً، نبني جيلاً واعداً ومستقبلاً مشرقاً ✨</p>
+            <div class="hero-buttons">
+                <a href="#initiatives" class="btn btn-primary">تعرف على مبادراتنا</a>
+                <a href="#contact" class="btn btn-outline">تواصل معنا</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div class="stat-number" id="stat-students" data-target="450">0</div>
+                <div class="stat-label">طالب وطالبة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                </div>
+                <div class="stat-number" id="stat-teachers" data-target="35">0</div>
+                <div class="stat-label">معلم ومعلمة</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <div class="stat-number" id="stat-classes" data-target="18">0</div>
+                <div class="stat-label">صف دراسي</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <div class="stat-number" id="stat-achievements" data-target="25">0</div>
+                <div class="stat-label">إنجاز وجائزة</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Initiatives Section -->
+    <section class="section initiatives-section" id="initiatives">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">مبادراتنا التربوية</h2>
+                <p class="section-subtitle">برامج مبتكرة لبناء شخصية الطالب وتنمية مهاراته</p>
+            </div>
+
+            <div class="initiatives-grid" id="initiatives-grid">
+                <!-- Initiatives will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="section calendar-section" id="calendar">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">الرزنامة المدرسية</h2>
+                <p class="section-subtitle">العام الدراسي 2025-2026</p>
+            </div>
+
+            <div class="calendar-controls" id="monthSelector"></div>
+
+            <div class="calendar-wrapper">
+                <h3 class="calendar-month-title" id="currentMonthTitle"></h3>
+                <div class="calendar-grid" id="calendarGrid"></div>
+                
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <div class="legend-color event-type-event"></div>
+                        <span>أحداث خاصة</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color event-type-exam"></div>
+                        <span>امتحانات</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color event-type-holiday"></div>
+                        <span>عطل وأعياد</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color event-type-special"></div>
+                        <span>أيام مميزة</span>
+                    </div>
+                </div>
+
+                <div class="values-section" id="valuesSection"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="section news-section" id="news">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">أخبار المدرسة</h2>
+                <p class="section-subtitle">آخر المستجدات والإعلانات المهمة</p>
+            </div>
+
+            <div class="news-grid" id="news-grid">
+                <!-- News will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal Section -->
+    <section class="section principal-section" id="principal">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">كلمة المدير</h2>
+                <p class="section-subtitle">رسالة ترحيبية من مدير المدرسة</p>
+            </div>
+
+            <div class="principal-card" id="principal-card">
+                <!-- Will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Links Section -->
+    <section class="section links-section" id="links">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">روابط هامة</h2>
+                <p class="section-subtitle">مواقع مفيدة للطلاب وأولياء الأمور</p>
+            </div>
+
+            <div class="links-grid" id="links-grid">
+                <!-- Links will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery-section" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">ألبوم الصور</h2>
+                <p class="section-subtitle">أجمل اللحظات والفعاليات في مدرستنا</p>
+            </div>
+
+            <div class="gallery-preview">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczOmuSnGS9OmfsVRo3-FedvNpsjYbgAZCMWlFYtMsFf4wX3F9upApscvMLiVa6MS2DQe7mNGNQO6zUyfSSMD4pmPpTOG5TFEZiZcE2jXzNrJjv7-4D9xh-H9HBsHtVYIU6nEesjXL_QvHFgZSVcvkU7jzA=w500-h500-s-no-gm?authuser=0" alt="ألبوم الصور" class="gallery-image-preview">
+                <a href="https://www.facebook.com/profile.php?id=100057560914853&sk=photos" target="_blank" class="gallery-btn">
+                    <i class="fas fa-camera-retro"></i>
+                    <span>تصفح الألبوم الكامل</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">اتصل بنا</h2>
+                <p class="section-subtitle">نحن هنا للإجابة على استفساراتكم</p>
+            </div>
+
+            <div class="contact-grid" id="contact-grid">
+                <!-- Contact info will be loaded dynamically -->
+            </div>
+
+            <div class="social-links" id="social-links">
+                <!-- Social links will be loaded dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">مدرسة مشيرفة الابتدائية - معاً نبني جيلاً واعداً ومستقبلاً مشرقاً</p>
+            <p class="footer-copyright">
+                جميع الحقوق محفوظة © 2025 | تصميم وتطوير فريق مدرسة مشيرفة
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#" target="_blank" class="whatsapp-float" id="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
